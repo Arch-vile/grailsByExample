@@ -17,7 +17,7 @@ class DefaultControllerSpec extends Specification {
 
     void "Calling an action returning a model"() {
 		
-		when: 'Controller action that returns only a model'
+		when: 'Controller action that returns only a model need to explicitly assigned'
 		def model = controller.returnsModel()
 		
 		then: 'Model populated'
@@ -27,7 +27,7 @@ class DefaultControllerSpec extends Specification {
 	
 	void "Calling an action returning model and view"() {
 		
-		when: 'Controller action that uses render method'
+		when: 'Controller action that uses render method will be assigned to model variable automatically'
 		controller.returnsModelAndView()
 		
 		then: 'Model populated'
