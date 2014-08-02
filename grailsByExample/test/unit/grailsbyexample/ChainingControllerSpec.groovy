@@ -20,10 +20,10 @@ class ChainingControllerSpec extends Specification {
 		when:
 		controller.doesChain()
 		
-		then: 'the model is as expected'
+		then: 'The model is as expected'
 		controller.chainModel.name == "my name"
 		
-		and: 'the redirect url is as expected'
+		and: 'URL points to the chained action'
 		response.redirectUrl == '/chaining/actionWithoutReturnValue'
     }
 	
@@ -32,7 +32,7 @@ class ChainingControllerSpec extends Specification {
 		when: 'Action chaining to default action is called'
 		controller.chainToDefaultAction()
 		
-		then: 'URL is mapped accordingly to the default mapping'
+		then: 'URL points to default action'
 		response.redirectUrl == '/chaining/index'
 		
 	}
