@@ -1,0 +1,1 @@
+<g:form action="myAction"></g:form>
