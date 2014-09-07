@@ -1,8 +1,8 @@
 <g:form action="myAction">
 
 	<g:textField 
-		name="location"
-		value="${fieldValue(bean: command, field: "location")}"
+		name="color"
+		value="${fieldValue(bean: command, field: "color")}"
 		/>
 
 </g:form>
