@@ -8,14 +8,21 @@ package grailsbyexample
  */
 class DefaultController {
 
-    def defaultAction() { }
-	
-	
-	def returnsModel() {
-		return [sentence: "How much wood would a woodchuck chuck"]
-	}
-	
-	def returnsModelAndView() {
-		render view: 'myView', model: [sentence: "If woodchuck could chuck wood"]
-	}
+    EchoService echoService
+
+    def defaultAction() {
+    }
+
+
+    def returnsModel() {
+        return [sentence: "How much wood would a woodchuck chuck"]
+    }
+
+    def returnsModelAndView() {
+        render view: 'myView', model: [sentence: "If woodchuck could chuck wood"]
+    }
+
+    def echoMe(whatToEcho) {
+        echoService.echo(whatToEcho)
+    }
 }
