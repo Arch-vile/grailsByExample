@@ -14,7 +14,7 @@ class DefaultControllerITSpec extends Specification {
 
     def setup() {
         controller = new DefaultController()
-        echoService = Mock(EchoService)
+        echoService = Mock(EchoService) // Always initialize for each test
         controller.echoService = echoService
     }
 
