@@ -1,6 +1,6 @@
 package grailsbyexample
 
-import grails.test.mixin.TestFor
+import grails.test.mixin.*
 import spock.lang.Specification
 
 /**
@@ -31,6 +31,7 @@ class DefaultControllerSpec extends Specification {
 
         then: 'Model populated'
         model.sentence == "If woodchuck could chuck wood"
+        view == "/default/myView"
     }
 
     void "Mocking service call"() {

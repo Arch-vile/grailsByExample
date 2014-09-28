@@ -28,18 +28,12 @@ class PaintCommandSpec extends Specification {
 
     void "Verify constraints"() {
 
-        setup: 'set request parameter to bind'
-        def params = [:]
-        params.color = "red"
-        params.opacity = -10 // this will violate constraint
-
-        when: 'bind parameters'
-        PaintCommand command = new PaintCommand();
-        controller.bindData(command,params)
+        when: 'bind and validate'
+        PaintCommand command = new PaintCommand(color: "red", opacity: -10);
         command.validate()
 
         then: 'constaint errors'
-        command.hasErrors()
+        command.errors.allErrors.size() == 1
         command.errors.fieldErrors.get(0).getCode() == "range.toosmall"
     }
 }
